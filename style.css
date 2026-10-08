@@ -1,0 +1,1358 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Georgia, serif;
+    color: white;
+    background: #24152e;
+}
+
+
+/* =========================
+   HOJAS
+========================= */
+
+.hoja {
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    position: relative;
+    overflow: hidden;
+
+    padding: 30px;
+}
+
+
+/* =========================
+   CONTENIDO GENERAL
+========================= */
+
+.contenido {
+    position: relative;
+    z-index: 5;
+
+    max-width: 850px;
+
+    animation: aparecer 1.8s ease-out;
+}
+
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   TEXTOS
+========================= */
+
+.pequeno {
+    font-size: 15px;
+    letter-spacing: 5px;
+    margin-bottom: 25px;
+    opacity: 0.8;
+}
+
+
+h1 {
+    font-size: 70px;
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
+
+h2 {
+    font-size: 55px;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+
+.mensaje {
+    font-size: 24px;
+    line-height: 1.7;
+    margin-bottom: 35px;
+}
+
+
+.frase {
+    font-size: 27px;
+    line-height: 1.4;
+    font-style: italic;
+    margin: 40px 0;
+}
+
+
+.final {
+    font-size: 30px;
+    font-style: italic;
+}
+
+
+/* =========================
+   BOTÓN
+========================= */
+
+button {
+    border: none;
+
+    padding: 16px 38px;
+
+    border-radius: 40px;
+
+    background: rgba(255,255,255,0.2);
+
+    color: white;
+
+    font-family: Georgia, serif;
+
+    font-size: 19px;
+
+    cursor: pointer;
+
+    border: 1px solid rgba(255,255,255,0.5);
+
+    backdrop-filter: blur(10px);
+
+    animation: latido 2.5s infinite;
+}
+
+
+@keyframes latido {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.06);
+    }
+
+}
+
+
+/* =========================
+   HOJA 1
+========================= */
+
+#inicio {
+    background: #24152e;
+}
+
+
+/* =========================
+   IMAGEN DE LA HOJA 1
+========================= */
+
+.prueba-imagen {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 1;
+
+    animation: zoomFondo 8s ease-in-out infinite alternate;
+}
+
+
+@keyframes zoomFondo {
+
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.15);
+    }
+
+}
+
+
+/* =========================
+   HOJA 2
+========================= */
+
+#cumpleanos {
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            #8f4f72 0%,
+            #542b4d 45%,
+            #211426 100%
+        );
+
+}
+
+
+/* =========================
+   CONTENIDO DEL CUMPLEAÑOS
+========================= */
+
+.cumple-contenido {
+
+    position: relative;
+
+    z-index: 10;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+    max-width: 900px;
+
+}
+
+
+/* =========================
+   HAPPY BIRTHDAY
+========================= */
+
+.happy {
+
+    font-size: 58px;
+
+    font-style: italic;
+
+    margin-bottom: 25px;
+
+    text-shadow:
+        0 3px 15px rgba(0,0,0,0.35);
+
+    animation: latidoTexto 2s ease-in-out infinite;
+
+}
+
+
+/* Crece y vuelve a su tamaño una sola vez */
+
+@keyframes aparecerCumple {
+
+    0% {
+
+        opacity: 0;
+
+        transform: scale(0.4);
+
+    }
+
+    60% {
+
+        opacity: 1;
+
+        transform: scale(1.18);
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform: scale(1);
+
+    }
+
+}
+
+
+/* =========================
+   IMAGEN DE LA HOJA 2
+========================= */
+
+.imagen-cumple {
+
+    display: block;
+
+    width: min(500px, 85vw);
+
+    max-height: 55vh;
+
+    object-fit: contain;
+
+    border-radius: 20px;
+
+    position: relative;
+
+    z-index: 5;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.35);
+
+    animation: aparecerImagen 1.8s ease-out;
+
+}
+
+
+@keyframes aparecerImagen {
+
+    from {
+
+        opacity: 0;
+
+        transform: scale(0.85);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1);
+
+    }
+
+}
+
+
+/* =========================
+   FRASE DEBAJO
+========================= */
+
+.dedicatoria {
+
+    font-size: 32px;
+
+    font-style: italic;
+
+    margin-top: 28px;
+
+    position: relative;
+
+    z-index: 10;
+
+    text-shadow:
+        0 3px 12px rgba(0,0,0,0.4);
+
+    animation: latidoTexto 2s ease-in-out infinite;
+
+}
+
+
+@keyframes aparecerFrase {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+@keyframes latidoTexto {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+/* =========================
+   CORAZONES
+========================= */
+
+.corazones {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 6;
+
+}
+
+
+.corazones span {
+
+    position: absolute;
+
+    top: -60px;
+
+    font-size: 22px;
+
+    opacity: 0.85;
+
+    animation-name: caerCorazon;
+
+    animation-timing-function: linear;
+
+    animation-iteration-count: infinite;
+
+}
+
+
+/* Posiciones */
+
+.corazones span:nth-child(1) {
+    left: 5%;
+    animation-duration: 6s;
+}
+
+.corazones span:nth-child(2) {
+    left: 13%;
+    animation-duration: 8s;
+    animation-delay: 1s;
+}
+
+.corazones span:nth-child(3) {
+    left: 22%;
+    animation-duration: 7s;
+    animation-delay: 2s;
+}
+
+.corazones span:nth-child(4) {
+    left: 31%;
+    animation-duration: 9s;
+    animation-delay: 0.5s;
+}
+
+.corazones span:nth-child(5) {
+    left: 40%;
+    animation-duration: 7s;
+    animation-delay: 3s;
+}
+
+.corazones span:nth-child(6) {
+    left: 49%;
+    animation-duration: 8s;
+    animation-delay: 1.5s;
+}
+
+.corazones span:nth-child(7) {
+    left: 58%;
+    animation-duration: 6s;
+    animation-delay: 2.5s;
+}
+
+.corazones span:nth-child(8) {
+    left: 67%;
+    animation-duration: 9s;
+    animation-delay: 1s;
+}
+
+.corazones span:nth-child(9) {
+    left: 76%;
+    animation-duration: 7s;
+    animation-delay: 3.5s;
+}
+
+.corazones span:nth-child(10) {
+    left: 84%;
+    animation-duration: 8s;
+    animation-delay: 2s;
+}
+
+.corazones span:nth-child(11) {
+    left: 91%;
+    animation-duration: 6s;
+    animation-delay: 4s;
+}
+
+.corazones span:nth-child(12) {
+    left: 96%;
+    animation-duration: 9s;
+    animation-delay: 2.5s;
+}
+
+
+/* Caída de los corazones */
+
+@keyframes caerCorazon {
+
+    0% {
+
+        transform:
+            translateY(-60px)
+            rotate(0deg);
+
+        opacity: 0;
+
+    }
+
+    10% {
+
+        opacity: 0.9;
+
+    }
+
+    50% {
+
+        transform:
+            translateY(50vh)
+            rotate(180deg);
+
+        opacity: 0.8;
+
+    }
+
+    100% {
+
+        transform:
+            translateY(110vh)
+            rotate(360deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    h1 {
+        font-size: 48px;
+    }
+
+    h2 {
+        font-size: 38px;
+    }
+
+    .mensaje {
+        font-size: 19px;
+    }
+
+    .happy {
+        font-size: 38px;
+        margin-bottom: 18px;
+    }
+
+    .imagen-cumple {
+        width: 82vw;
+        max-height: 48vh;
+    }
+
+    .dedicatoria {
+        font-size: 25px;
+        margin-top: 20px;
+    }
+
+    .corazones span {
+        font-size: 18px;
+    }
+
+}
+/* =========================
+   HOJA 3 - FINAL
+========================= */
+
+#final {
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            #ffd9e8 0%,
+            #f7b6cf 35%,
+            #e89ab8 70%,
+            #d982a5 100%
+        );
+
+    color: #5c2941;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   CONTENIDO
+========================= */
+
+.final-contenido {
+
+    position: relative;
+
+    z-index: 10;
+
+    max-width: 750px;
+
+    padding: 40px;
+
+    text-align: center;
+
+    animation: aparecerFinal 2s ease-out;
+
+}
+
+
+@keyframes aparecerFinal {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   FRASE
+========================= */
+
+.frase-final {
+
+    font-size: 27px;
+
+    line-height: 1.6;
+
+    font-style: italic;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* =========================
+   SEPARADOR
+========================= */
+
+.separador {
+
+    font-size: 25px;
+
+    margin: 20px 0 30px;
+
+    opacity: 0.75;
+
+}
+
+
+/* =========================
+   POEMA
+========================= */
+
+.poema-final {
+
+    font-family: Georgia, serif;
+
+    font-size: 25px;
+
+    line-height: 1.8;
+
+    font-style: italic;
+
+}
+
+
+/* =========================
+   CORAZÓN
+========================= */
+
+.corazon-final {
+
+    font-size: 42px;
+
+    margin: 28px 0;
+
+    animation: latidoFinal 2s ease-in-out infinite;
+
+}
+
+
+@keyframes latidoFinal {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+}
+
+
+/* =========================
+   FIRMA
+========================= */
+
+.firma-final {
+
+    font-size: 25px;
+
+    font-style: italic;
+
+    margin-top: 15px;
+
+}
+
+
+/* =========================
+   DECORACIÓN
+========================= */
+
+.decoracion {
+
+    position: absolute;
+
+    z-index: 2;
+
+    opacity: 0.65;
+
+    pointer-events: none;
+
+}
+
+
+.decoracion-1 {
+
+    top: 8%;
+
+    left: 8%;
+
+    font-size: 65px;
+
+    transform: rotate(-15deg);
+
+}
+
+
+.decoracion-2 {
+
+    top: 18%;
+
+    right: 10%;
+
+    font-size: 70px;
+
+    transform: rotate(15deg);
+
+}
+
+
+.decoracion-3 {
+
+    bottom: 10%;
+
+    left: 10%;
+
+    font-size: 60px;
+
+    transform: rotate(12deg);
+
+}
+
+
+.decoracion-4 {
+
+    bottom: 18%;
+
+    right: 9%;
+
+    font-size: 75px;
+
+    transform: rotate(-15deg);
+
+}
+
+
+.decoracion-5 {
+
+    top: 48%;
+
+    left: 3%;
+
+    font-size: 35px;
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .final-contenido {
+
+        padding: 25px;
+
+    }
+
+    .frase-final {
+
+        font-size: 21px;
+
+    }
+
+    .poema-final {
+
+        font-size: 20px;
+
+        line-height: 1.7;
+
+    }
+
+    .firma-final {
+
+        font-size: 21px;
+
+    }
+
+    .decoracion-1,
+    .decoracion-3 {
+
+        left: 3%;
+
+    }
+
+    .decoracion-2,
+    .decoracion-4 {
+
+        right: 3%;
+
+    }
+
+}
+/* =========================
+   HOJA 3 - FINAL
+========================= */
+
+#final {
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            #ffd9e8 0%,
+            #f7b6cf 35%,
+            #e89ab8 70%,
+            #d982a5 100%
+        );
+
+    color: #5c2941;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   CONTENIDO
+========================= */
+
+.final-contenido {
+
+    position: relative;
+
+    z-index: 10;
+
+    max-width: 750px;
+
+    padding: 40px;
+
+    text-align: center;
+
+    animation: aparecerFinal 2s ease-out;
+
+}
+
+
+@keyframes aparecerFinal {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================
+   FRASE
+========================= */
+
+.frase-final {
+
+    font-size: 27px;
+
+    line-height: 1.6;
+
+    font-style: italic;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* =========================
+   SEPARADOR
+========================= */
+
+.separador {
+
+    font-size: 25px;
+
+    margin: 20px 0 30px;
+
+    opacity: 0.75;
+
+}
+
+
+/* =========================
+   POEMA
+========================= */
+
+.poema-final {
+
+    font-family: Georgia, serif;
+
+    font-size: 25px;
+
+    line-height: 1.8;
+
+    font-style: italic;
+
+}
+
+
+/* =========================
+   CORAZÓN
+========================= */
+
+.corazon-final {
+
+    font-size: 42px;
+
+    margin: 28px 0;
+
+    animation: latidoFinal 2s ease-in-out infinite;
+
+}
+
+
+@keyframes latidoFinal {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+}
+
+
+/* =========================
+   FIRMA
+========================= */
+
+.firma-final {
+
+    font-size: 25px;
+
+    font-style: italic;
+
+    margin-top: 15px;
+
+}
+
+
+/* =========================
+   DECORACIÓN
+========================= */
+
+.decoracion {
+
+    position: absolute;
+
+    z-index: 2;
+
+    opacity: 0.65;
+
+    pointer-events: none;
+
+}
+
+
+.decoracion-1 {
+
+    top: 8%;
+
+    left: 8%;
+
+    font-size: 65px;
+
+    transform: rotate(-15deg);
+
+}
+
+
+.decoracion-2 {
+
+    top: 18%;
+
+    right: 10%;
+
+    font-size: 70px;
+
+    transform: rotate(15deg);
+
+}
+
+
+.decoracion-3 {
+
+    bottom: 10%;
+
+    left: 10%;
+
+    font-size: 60px;
+
+    transform: rotate(12deg);
+
+}
+
+
+.decoracion-4 {
+
+    bottom: 18%;
+
+    right: 9%;
+
+    font-size: 75px;
+
+    transform: rotate(-15deg);
+
+}
+
+
+.decoracion-5 {
+
+    top: 48%;
+
+    left: 3%;
+
+    font-size: 35px;
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .final-contenido {
+
+        padding: 25px;
+
+    }
+
+    .frase-final {
+
+        font-size: 21px;
+
+    }
+
+    .poema-final {
+
+        font-size: 20px;
+
+        line-height: 1.7;
+
+    }
+
+    .firma-final {
+
+        font-size: 21px;
+
+    }
+
+    .decoracion-1,
+    .decoracion-3 {
+
+        left: 3%;
+
+    }
+
+    .decoracion-2,
+    .decoracion-4 {
+
+        right: 3%;
+
+    }
+
+}
+
+#final {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+    background: pink;
+}
+.boton-final {
+
+    margin-top: 25px;
+
+    padding: 14px 30px;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,0.18);
+
+    color: white;
+
+    border: 1px solid rgba(255,255,255,0.6);
+
+    font-family: Georgia, serif;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    animation: latidoBoton 2.5s ease-in-out infinite;
+
+}
+
+
+@keyframes latidoBoton {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+}
+/* =========================
+   FUEGOS ARTIFICIALES
+========================= */
+
+#fuegos-artificiales {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 20;
+    overflow: hidden;
+}
+
+.fuego {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow:
+        0 0 8px #fff,
+        0 0 15px #ffb6d9;
+    animation: explotar 1.5s ease-out forwards;
+}
+
+@keyframes explotar {
+
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(12);
+        opacity: 0;
+    }
+
+}
+#fuegos-artificiales {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 20;
+    overflow: hidden;
+}
+
+.fuego {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: white;
+    box-shadow:
+        0 0 8px white,
+        0 0 15px #ffb6d9;
+    animation: explotar 1.5s ease-out forwards;
+}
+
+@keyframes explotar {
+
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(12);
+        opacity: 0;
+    }
+
+}
+/* Movimiento suave de las decoraciones de la Hoja 3 */
+
+.decoracion-1 {
+    animation: balanceoFlor1 4s ease-in-out infinite;
+}
+
+.decoracion-2 {
+    animation: balanceoCorazon1 3.5s ease-in-out infinite;
+}
+
+.decoracion-3 {
+    animation: balanceoFlor2 4.5s ease-in-out infinite;
+}
+
+.decoracion-4 {
+    animation: balanceoCorazon2 3.8s ease-in-out infinite;
+}
+
+.decoracion-5 {
+    animation: balanceoFlor3 4.2s ease-in-out infinite;
+}
+
+
+@keyframes balanceoFlor1 {
+    0%, 100% {
+        transform: rotate(-15deg) translateX(0);
+    }
+
+    50% {
+        transform: rotate(-5deg) translateX(12px);
+    }
+}
+
+
+@keyframes balanceoCorazon1 {
+    0%, 100% {
+        transform: rotate(15deg) translateX(0);
+    }
+
+    50% {
+        transform: rotate(5deg) translateX(-12px);
+    }
+}
+
+
+@keyframes balanceoFlor2 {
+    0%, 100% {
+        transform: rotate(12deg) translateX(0);
+    }
+
+    50% {
+        transform: rotate(20deg) translateX(10px);
+    }
+}
+
+
+@keyframes balanceoCorazon2 {
+    0%, 100% {
+        transform: rotate(-15deg) translateX(0);
+    }
+
+    50% {
+        transform: rotate(-5deg) translateX(-10px);
+    }
+}
+
+
+@keyframes balanceoFlor3 {
+    0%, 100% {
+        transform: rotate(0deg) translateX(0);
+    }
+
+    50% {
+        transform: rotate(-10deg) translateX(10px);
+    }
+}
